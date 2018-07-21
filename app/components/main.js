@@ -15,7 +15,7 @@ export default class Main extends Component {
         return (
             <Container style={{ backgroundColor: 'white' }}> 
                 {header("Cleanly")}
-                <View style={{ flexDirection: "row", flex: 1}}>
+                <View style={{flex: 1}}>
                     <Image style={{ width:370, resizeMode: 'center', marginTop: 20, marginBottom: 20, backgroundColor: 'transparent' }} 
                         source={require('./resources/logo.png')} />
                 </View>

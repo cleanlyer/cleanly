@@ -13,7 +13,7 @@ export default class Clean extends Component {
         return (
             <Container style={{ backgroundColor: 'white' }}> 
                 {header("Clean")}
-                <View style={{ flexDirection: "row", flex: 1}}>
+                <View style={{flex: 1}}>
                 <Text> here goes the clean form for clean </Text>
                 </View>
             </Container>

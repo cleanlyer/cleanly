@@ -1,5 +1,6 @@
 import React from 'react'
 import { Actions } from 'react-native-router-flux'
+import { Text } from 'react-native'
 import { Header, Title, Body, Left, Right, Button, Icon } from 'native-base'
 
 export default function header(name){
@@ -13,6 +14,10 @@ export default function header(name){
                 <Body>
                     <Title>{name}</Title>
                 </Body>
-                <Right/>
+                <Right>
+                    <Button transparent>
+                        <Text>100 p</Text>
+                    </Button>
+                </Right>
             </Header>
 }

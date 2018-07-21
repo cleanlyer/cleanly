@@ -35,8 +35,7 @@ class Clean extends Component {
 }
 
 function mapStateToProps(state){
-    console.log(state)
-    let Inventory = ["this is crap"]
+    let Inventory = state.track.garbageCoordinates
     return {
         Inventory
     }

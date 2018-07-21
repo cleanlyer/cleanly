@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import false from './fake'
+import fake from './fake'
 
 export default combineReducers({
     fake

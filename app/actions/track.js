@@ -7,3 +7,10 @@ export function updateUserCoordinates(){
         })
     }
 }
+
+export function sendReport(payload){
+    return (dispatch) => {
+        //call back-end with payload
+        dispatch( { type: types.SEND_REPORT, payload: payload })
+    }
+}

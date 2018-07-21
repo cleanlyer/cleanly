@@ -35,6 +35,7 @@ class Report extends Component {
                             longitude: this.props.location.longitude,
                             isClean: false
                         }) 
+                        this.props.updateScore(5)
                         Actions.pop()
                     }}><Text> Submit </Text></Button>
                     <Button transparent onPress={ () =>{
@@ -44,6 +45,7 @@ class Report extends Component {
                             longitude: this.props.location.longitude,
                             isClean: true
                         })
+                        this.props.updateScore(15)
                         Actions.pop()
                      }}><Text> Submit And Clean </Text></Button>
                 </FooterTab>

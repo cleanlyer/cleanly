@@ -24,6 +24,7 @@ class Clean extends Component {
                         <Body><Text>{JSON.stringify(element)}</Text></Body>
                         <Right><Button transparent onPress={() => {
                             this.props.sendClean(element.id)
+                            this.props.updateScore(10)
                         }}><Icon active name="trash" /></Button></Right>
                   </ListItem>)
                 }

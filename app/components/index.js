@@ -7,6 +7,7 @@ import { ActionCreators } from '../actions'
 import { Actions, Router, Scene } from 'react-native-router-flux'
 
 import main from './main'
+import report from './report'
 
 class AppContainer extends Component {
     render() {
@@ -14,6 +15,7 @@ class AppContainer extends Component {
                         <Scene key="root" hideNavBar={true} tabs={false} >
                             <Scene key="tabbar" tabs={false} hideNavBar={true}>
                                 <Scene key='main' component={main} title="Main" initial />
+                                <Scene key='report' component={report} title="Report" />
                             </Scene>
                         </Scene>
                     </Router>

@@ -11,7 +11,8 @@ export function updateUserCoordinates(){
 export function sendReport(report){
     return (dispatch) => {
         //call back-end with payload
-        dispatch( { type: types.SEND_REPORT, payload: report })
+        if(!report.isClean)
+            dispatch( { type: types.SEND_REPORT, payload: report })
     }
 }
 

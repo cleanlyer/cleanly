@@ -3,7 +3,7 @@ import { Actions } from 'react-native-router-flux'
 import { Text } from 'react-native'
 import { Header, Title, Body, Left, Right, Button, Icon } from 'native-base'
 
-export default function header(name){
+export default function header(name, score){
     return  <Header>
                 <Left>
                     {name!="Cleanly" && 
@@ -16,7 +16,7 @@ export default function header(name){
                 </Body>
                 <Right>
                     <Button transparent>
-                        <Text>100 p</Text>
+                        <Text>{score} kudos</Text>
                     </Button>
                 </Right>
             </Header>

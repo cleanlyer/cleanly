@@ -15,7 +15,7 @@ class Report extends Component {
     render() {
         return (
             <Container style={{ backgroundColor: 'white' }}> 
-                {header("Report")}
+                {header("Report", this.props.score)}
                 <View style={{ flex: 1 }}>
                     <Form>
                         <Item>
@@ -55,9 +55,10 @@ class Report extends Component {
 
 
 function mapStateToProps(state){
+    let score = state.gamify.score
     let location = state.track.userCoordinates
     return {
-        location
+        location, score
     }
 }
 

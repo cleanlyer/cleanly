@@ -15,11 +15,11 @@ class Clean extends Component {
         this.props.Inventory = []
         return (
             <Container style={{ backgroundColor: 'white' }}> 
-                {header("Clean")}
+                {header("Clean", this.props.score)}
                 <View style={{flex: 1}}>
                 <List>
                 {
-                    this.props.Inventory.map((element, index) => 
+                    this.props.listGarbage.map((element, index) => 
                     <ListItem key={"element_"+index}>
                         <Body><Text>{JSON.stringify(element)}</Text></Body>
                         <Right><Button transparent onPress={() => {
@@ -35,9 +35,10 @@ class Clean extends Component {
 }
 
 function mapStateToProps(state){
-    let Inventory = state.track.garbageCoordinates
+    let score = state.gamify.score
+    let listGarbage = state.track.garbageCoordinates
     return {
-        Inventory
+        listGarbage, score
     }
 }
 

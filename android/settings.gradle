@@ -1,0 +1,3 @@
+rootProject.name = 'cleanly'
+
+include ':app'

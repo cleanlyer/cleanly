@@ -3,6 +3,7 @@ import { View, Image, Text } from 'react-native'
 import { Container, Button } from 'native-base'
 import header from './common/header'
 import { Actions } from 'react-native-router-flux'
+import footer from './common/footer'
 
 
 export default class Main extends Component {
@@ -18,10 +19,7 @@ export default class Main extends Component {
                     <Image style={{ width:370, resizeMode: 'center', marginTop: 20, marginBottom: 20, backgroundColor: 'transparent' }} 
                         source={require('./resources/logo.png')} />
                 </View>
-                <View style={{ flexDirection: "row", flex: 1, position: "absolute", bottom: 50, left: 0, right: 0, padding: 15 }}>
-                <Button success onPress={ () =>{ Actions.report() }}><Text> Report </Text></Button>
-                <Button success onPress={ () =>{ Actions.clean() }}><Text> Clean </Text></Button>
-                </View>
+                {footer()}
             </Container>
         )
     }

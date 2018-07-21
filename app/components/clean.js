@@ -4,7 +4,7 @@ import { Container, Button } from 'native-base'
 import header from './common/header'
 
 
-export default class Report extends Component {
+export default class Clean extends Component {
     constructor(props){
         super(props)
     }
@@ -12,9 +12,9 @@ export default class Report extends Component {
     render() {
         return (
             <Container style={{ backgroundColor: 'white' }}> 
-                {header("Report")}
+                {header("Clean")}
                 <View style={{ flexDirection: "row", flex: 1}}>
-                <Text> here goes the form for report </Text>
+                <Text> here goes the clean form for clean </Text>
                 </View>
             </Container>
         )

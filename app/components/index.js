@@ -8,14 +8,16 @@ import { Actions, Router, Scene } from 'react-native-router-flux'
 
 import main from './main'
 import report from './report'
+import clean from './clean'
 
 class AppContainer extends Component {
     render() {
             return <Router {...this.props}>
                         <Scene key="root" hideNavBar={true} tabs={false} >
                             <Scene key="tabbar" tabs={false} hideNavBar={true}>
-                                <Scene key='main' component={main} title="Main" initial />
+                                <Scene key='main' component={main} title="Cleanly" initial />
                                 <Scene key='report' component={report} title="Report" />
+                                <Scene key='clean' component={clean} title="Clean" />
                             </Scene>
                         </Scene>
                     </Router>

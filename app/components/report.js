@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 import { View, Image, Text } from 'react-native'
 import header from './common/header'
 import { Container, Footer, FooterTab, Form, Item, Input, Button } from 'native-base'
+import { connect } from 'react-redux'
 
-export default class Report extends Component {
+class Report extends Component {
     constructor(props){
         super(props)
+        this.props.updateUserCoordinates()
     }
 
     render() {
@@ -15,10 +17,10 @@ export default class Report extends Component {
                 <View style={{ flex: 1 }}>
                     <Form>
                         <Item>
-                            <Input placeholder="Latitude" />
+                            <Input value={JSON.stringify(this.props.location.latitude)} disabled={true} />
                         </Item>
                         <Item last>
-                            <Input placeholder="Longitude" />
+                            <Input value={JSON.stringify(this.props.location.longitude)} disabled={true} />
                         </Item>
                     </Form>
                 </View>
@@ -32,3 +34,14 @@ export default class Report extends Component {
         )
     }
 }
+
+
+function mapStateToProps(state){
+    console.log(JSON.stringify(state))
+    let location = state.track.userCoordinates
+    return {
+        location
+    }
+}
+
+export default connect(mapStateToProps)(Report)

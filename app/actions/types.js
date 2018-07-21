@@ -1,2 +1,3 @@
 export const FAKE = 'FAKE'
+export const UPDATE_USER_LOCATION = 'UPDATE_USER_LOCATION'
 export const REPORT_SEND = 'REPORT_SEND'

@@ -4,6 +4,7 @@ import header from './common/header'
 import { Actions } from 'react-native-router-flux'
 import { Container, Footer, FooterTab, Form, Item, Input, Button } from 'native-base'
 import { connect } from 'react-redux'
+import {v1 as uuid } from 'uuid'
 
 class Report extends Component {
     constructor(props){
@@ -29,6 +30,7 @@ class Report extends Component {
                 <FooterTab>
                     <Button transparent onPress={ () =>{ 
                         this.props.sendReport({
+                            id: uuid(),
                             latitude: this.props.location.latitude,
                             longitude: this.props.location.longitude,
                             isClean: false
@@ -37,6 +39,7 @@ class Report extends Component {
                     }}><Text> Submit </Text></Button>
                     <Button transparent onPress={ () =>{
                         this.props.sendReport({
+                            id: uuid(),
                             latitude: this.props.location.latitude,
                             longitude: this.props.location.longitude,
                             isClean: true
@@ -52,7 +55,6 @@ class Report extends Component {
 
 
 function mapStateToProps(state){
-    console.log(JSON.stringify(state))
     let location = state.track.userCoordinates
     return {
         location

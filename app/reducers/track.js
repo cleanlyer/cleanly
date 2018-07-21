@@ -4,7 +4,7 @@ import * as types from '../actions/types'
 
 export const userCoordinates = createReducer(false , {
     [types.UPDATE_USER_LOCATION](state, action) {
-        return action.position.coords
+        return action.payload.coords
     }
 })
 

@@ -21,7 +21,8 @@ class Clean extends Component {
                 {
                     this.props.listGarbage.map((element, index) => 
                     <ListItem key={"element_"+index}>
-                        <Body><Text>{JSON.stringify(element)}</Text></Body>
+                        <Body><Text>latitude: {element.latitude}</Text>
+                        <Text>longitude: {element.longitude}</Text></Body>
                         <Right><Button transparent onPress={() => {
                             this.props.sendClean(element.id)
                             this.props.updateScore(10)

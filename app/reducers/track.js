@@ -15,7 +15,11 @@ export const garbageCoordinates = createReducer(List() , {
     },
     [types.SEND_CLEAN](state, action) {
         return state.filter(object => object.id != action.payload)
+    },
+    [types.GET_GARBAGE](state, action) {
+        return List(action.payload)
     }
+    
 })
 
 export default combineReducers({ userCoordinates, garbageCoordinates })

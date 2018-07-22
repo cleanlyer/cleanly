@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { StyleSheet, View, Image, Text } from 'react-native'
 import header from './common/header'
 import { Actions } from 'react-native-router-flux'
-import { Container, Footer, FooterTab, Form, Item, Input, Button } from 'native-base'
+import { Grid, Col, Thumbnail, Container, Footer, FooterTab, Form, Item, Input, Button, Row } from 'native-base'
 import { connect } from 'react-redux'
 import {v1 as uuid } from 'uuid'
 import { RNCamera } from 'react-native-camera'
@@ -40,6 +40,27 @@ class Report extends Component {
             <Container style={{ backgroundColor: 'white' }}> 
                 {header("Report", this.props.score)}
                 <View style={{ flex: 1 }}>
+                <Grid>
+                    <Col>
+                    <Grid>
+                     <Row><Image square source={require('./resources/beer.jpeg')} /></Row>
+                     <Row><Image square source={require('./resources/cola.png')} /></Row>
+                     <Row><Image square source={require('./resources/macdo.jpg')} /></Row>
+                     </Grid>
+                    </Col>
+                    <Col>
+                    <Grid>
+                     <Row><Image square source={require('./resources/beer.jpeg')} /></Row>
+                     <Row><Image square source={require('./resources/cola.png')} /></Row>
+                     <Row><Image square source={require('./resources/macdo.jpg')} /></Row>
+                     </Grid></Col>
+                    <Col>
+                    <Grid>
+                     <Row><Image source={require('./resources/beer.jpeg')} /></Row>
+                     <Row><Image square source={require('./resources/cola.png')} /></Row>
+                     <Row><Image square source={require('./resources/macdo.jpg')} /></Row>
+                     </Grid></Col>
+                </Grid>
                     {/* <RNCamera
                         style={styles.preview}
                         type={RNCamera.Constants.Type.back}
@@ -51,14 +72,14 @@ class Report extends Component {
 
                     }}
                     </RNCamera> */}
-                    <Form>
+                    {/* <Form>
                         <Item>
                             <Input value={JSON.stringify(this.props.location.latitude)} disabled={true} />
                         </Item>
                         <Item last>
                             <Input value={JSON.stringify(this.props.location.longitude)} disabled={true} />
                         </Item>
-                    </Form>
+                    </Form> */}
                 </View>
                 <Footer>
                 <FooterTab>

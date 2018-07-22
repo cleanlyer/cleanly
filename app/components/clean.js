@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 class Clean extends Component {
     constructor(props){
         super(props)
-        
+        this.props.updateGarbageList()
     }
 
     render() {

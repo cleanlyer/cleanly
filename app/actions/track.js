@@ -55,12 +55,12 @@ export function sendClean(id){
                 'Content-Type': 'application/json',
             }
         })
-        .then((_) => {
-                dispatch( { type: types.SEND_CLEAN, payload: id })
+        .catch(() => {
+            dispatch( { type: types.SEND_CLEAN_OFFLINE, payload: id })
         })
-        .catch((error) => {
-            console.error(error)
-        })
+        .finally(() => {
+            dispatch( { type: types.SEND_CLEAN, payload: id })
+    })
         
     }
 }

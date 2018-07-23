@@ -4,7 +4,7 @@ import * as types from '../actions/types'
 import { List } from 'immutable'
 
 export const userCoordinates = createReducer({latitude: 12.12, longitude:12.12} , {
-    [types.UPDATE_USER_LOCATION](state, action) {
+    [types.UPDATE_USER_LOCATION](_, action) {
         return action.payload.coords
     }
 })
@@ -16,7 +16,7 @@ export const garbageCoordinates = createReducer(List() , {
     [types.SEND_CLEAN](state, action) {
         return state.filter(object => object.id != action.payload)
     },
-    [types.GET_GARBAGE](state, action) {
+    [types.GET_GARBAGE](_, action) {
         return List(action.payload)
     }
     

@@ -1,33 +1,11 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text } from 'react-native'
+import { View, Text } from 'react-native'
 import header from './common/header'
 import { Actions } from 'react-native-router-flux'
 import { Container, Footer, FooterTab, Form, Item, Input, Button } from 'native-base'
 import { connect } from 'react-redux'
 import {v1 as uuid } from 'uuid'
 // import { RNCamera } from 'react-native-camera'
-
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      flexDirection: 'column',
-      backgroundColor: 'black',
-    },
-    preview: {
-      flex: 1,
-      justifyContent: 'flex-end',
-      alignItems: 'center',
-    },
-    capture: {
-      flex: 0,
-      backgroundColor: '#fff',
-      borderRadius: 5,
-      padding: 15,
-      paddingHorizontal: 20,
-      alignSelf: 'center',
-      margin: 20,
-    },
-  });
 
 class Report extends Component {
     constructor(props){
@@ -41,7 +19,6 @@ class Report extends Component {
                 {header("Report", this.props.score)}
                 <View style={{ flex: 1 }}>
                     {/* <RNCamera
-                        style={styles.preview}
                         type={RNCamera.Constants.Type.back}
                         flashMode={RNCamera.Constants.FlashMode.on}
                         permissionDialogTitle={'Permission to use camera'}

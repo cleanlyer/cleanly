@@ -8,6 +8,15 @@ import { createLogger } from 'redux-logger'
 
 import AppContainer from './components'
 import reducer from './reducers'
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage' 
+import immutableTransform from 'redux-persist-transform-immutable'
+
+const persistConfig = {
+  transforms: [immutableTransform()],
+  key: 'root',
+  storage
+}
 
 const loggerMiddleware = createLogger({ predicate: (getState, action) => __DEV__ })
 
@@ -18,10 +27,13 @@ function configureStore(initialState){
             loggerMiddleware
         )
     )
-    return createStore(reducer, initialState, enhancer)
+
+    return createStore(persistReducer(persistConfig, reducer), initialState, enhancer)
 }
 
 const store = configureStore({})
+
+persistStore(store)
 
 class App extends Component {
     render(){ 

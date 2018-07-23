@@ -21,7 +21,7 @@ export function updateGarbageList(){
             dispatch( { type: types.GET_GARBAGE, payload: responseJson })
         })
         .catch(() => {
-            dispatch( { type: types.OFFLINE })
+            dispatch( { type: types.GET_GARBAGE_OFFLINE })
         })
     }
 }
@@ -29,20 +29,19 @@ export function updateGarbageList(){
 export function sendReport(report){
     return (dispatch) => {
         fetch('https://rocky-dusk-51136.herokuapp.com/garbage', {
-        method: 'POST',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(report),
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(report),
         })
         .then(() => {
-            console.log('upload worked')
             if(!report.isClean)
                 dispatch( { type: types.SEND_REPORT, payload: report })
         })
-        .catch((error) => {
-        console.error(error)
+        .catch(() => {
+            dispatch( { type: types.SEND_REPORT_OFFLINE, payload: report })
         })
     }
     

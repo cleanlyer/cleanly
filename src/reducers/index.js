@@ -5,4 +5,4 @@ import offline from './offline'
 
 export default combineReducers({
     track, gamify, offline
-});
+})

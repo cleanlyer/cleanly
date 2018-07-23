@@ -36,12 +36,12 @@ export function sendReport(report){
             },
             body: JSON.stringify(report),
         })
-        .then(() => {
-            if(!report.isClean)
-                dispatch( { type: types.SEND_REPORT, payload: report })
-        })
         .catch(() => {
             dispatch( { type: types.SEND_REPORT_OFFLINE, payload: report })
+        })
+        .finally(() => {
+            if(!report.isClean)
+                dispatch( { type: types.SEND_REPORT, payload: report })
         })
     }
     

@@ -18,11 +18,10 @@ export function updateGarbageList(){
         })
         .then((response) => response.json())
         .then((responseJson) => {
-                console.log(responseJson)
-                dispatch( { type: types.GET_GARBAGE, payload: responseJson })
+            dispatch( { type: types.GET_GARBAGE, payload: responseJson })
         })
-        .catch((error) => {
-        console.error(error)
+        .catch(() => {
+            dispatch( { type: types.OFFLINE })
         })
     }
 }

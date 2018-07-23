@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Image, Text } from 'react-native'
+import { View, Text } from 'react-native'
 import { Container, Button, List, ListItem, Body, Right, Icon, Left, Thumbnail } from 'native-base'
 import header from './common/header'
 import { connect } from 'react-redux'
@@ -22,7 +22,7 @@ class Clean extends Component {
                     this.props.listGarbage.map((element, index) => 
                     <ListItem key={"element_"+index} thumbnail>
                     <Left>
-                        <Thumbnail square source={require('./resources/cola.png')} />
+                        <Thumbnail square source={require('./resources/logo.png')} />
                     </Left>
                         <Body><Text>latitude: {element.latitude}</Text>
                         <Text>longitude: {element.longitude}</Text></Body>

@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { ActionCreators } from '../actions'
 
-import { Actions, Router, Scene } from 'react-native-router-flux'
+import { Router, Scene } from 'react-native-router-flux'
 
 import main from './main'
 import report from './report'

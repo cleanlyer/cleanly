@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { View, Image, Text } from 'react-native'
-import { Container, Button, Thumbnail } from 'native-base'
+import { View, Text } from 'react-native'
+import { Container, Thumbnail } from 'native-base'
 import header from './common/header'
 import footer from './common/footer'
 import { connect } from 'react-redux'

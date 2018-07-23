@@ -11,6 +11,7 @@ import reducer from './reducers'
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage' 
 import immutableTransform from 'redux-persist-transform-immutable'
+import { PersistGate } from 'redux-persist/integration/react'
 
 const persistConfig = {
   transforms: [immutableTransform()],
@@ -33,13 +34,15 @@ function configureStore(initialState){
 
 const store = configureStore({})
 
-persistStore(store)
+const persistor = persistStore(store)
 
 class App extends Component {
     render(){ 
         return (
             <Provider store={store}>
-                <AppContainer />
+                <PersistGate loading={null} persistor={persistor}>
+                    <AppContainer />
+                </PersistGate>
             </Provider>
         )
     }

@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "react-native-debugger": "/Applications/'React Native Debugger.app'/Contents/MacOS/'React Native Debugger'",
+    "test:cov": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "start:ios": "yarn start & yarn react-native-debugger & react-native run-ios",
     "start:android": "yarn start & yarn react-native-debugger & react-native run-android",
     "setup": "yarn install && react-native link",
@@ -31,6 +32,7 @@
   "devDependencies": {
     "babel-jest": "23.4.2",
     "babel-preset-react-native": "^5",
+    "coveralls": "3.0.2",
     "jest": "23.4.2",
     "react-test-renderer": "16.4.1"
   },

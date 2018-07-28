@@ -40,8 +40,8 @@
     "testMatch": [
       "**/test/**/*-test.js"
     ],
-    "transformIgnorePatterns": [
-      "node_modules/(?!react-native|native-base|react-navigation)"
-    ]
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+    }
   }
 }

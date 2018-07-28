@@ -1,7 +1,8 @@
 import * as gamify from '../../../src/actions/gamify'
 import * as types from '../../../src/actions/types'
 import * as faker from 'faker'
-describe('gamify should', () => {
+
+describe('gamify action should', () => {
     it('update score should dispatch points in event UPDATE_SCORE', () => {
         let points = faker.random.number(200),
             assert = jest.fn()

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text } from 'react-native'
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
 import header from './common/header'
 import { Actions } from 'react-native-router-flux'
 import { Container, Footer, FooterTab, Button } from 'native-base'
@@ -43,10 +43,19 @@ class Report extends Component {
                     <RNCamera
                         style={styles.preview}
                         type={RNCamera.Constants.Type.back}
-                        flashMode={RNCamera.Constants.FlashMode.on}
                         permissionDialogTitle={'Permission to use camera'}
                         permissionDialogMessage={'We need your permission to use your camera phone'}
                     >
+                    {({ camera, status }) => {
+                        if (status === 'READY') 
+                        return (
+                        <View style={{ flex: 0, flexDirection: 'row', justifyContent: 'center' }}>
+                            <TouchableOpacity onPress={() => this.takePicture(camera)} style={styles.capture}>
+                            <Text style={{ fontSize: 14 }}> SNAP </Text>
+                            </TouchableOpacity>
+                        </View>
+                        );
+                    }}
                     </RNCamera>
                 </View>
                 <Footer>

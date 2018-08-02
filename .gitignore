@@ -58,3 +58,4 @@ buck-out/
 
 coverage
 play.json
+ios/Pods/

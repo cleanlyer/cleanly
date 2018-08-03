@@ -5,14 +5,19 @@ import { bindActionCreators } from 'redux'
 import { ActionCreators } from '../actions'
 
 import { Router, Scene } from 'react-native-router-flux'
+import { StyleProvider } from 'native-base'
 
 import main from './main'
 import report from './report'
 import clean from './clean'
 
+import getTheme from '../theme/components'
+import cleanly from '../theme/variables/cleanly'
+
 class AppContainer extends Component {
     render() {
-            return <Router {...this.props}>
+            return <StyleProvider style={getTheme(cleanly)}>
+                    <Router {...this.props}>
                         <Scene key="root" hideNavBar={true} tabs={false} >
                             <Scene key="tabbar" tabs={false} hideNavBar={true}>
                                 <Scene key='main' component={main} title="Cleanly" initial />
@@ -21,6 +26,7 @@ class AppContainer extends Component {
                             </Scene>
                         </Scene>
                     </Router>
+                </StyleProvider>
         }
     }
 

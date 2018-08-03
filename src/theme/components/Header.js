@@ -383,12 +383,12 @@ export default (variables = variable) => {
       variables.platform === "ios" && variables.platformStyle === "material"
         ? variables.toolbarHeight + StatusBar.height
         : variables.toolbarHeight,
-    elevation: 3,
-    shadowColor: platformStyle === "material" ? "#000" : undefined,
+    elevation: 0,
+    shadowColor: platformStyle === "material" ? "transparent" : undefined,
     shadowOffset:
-      platformStyle === "material" ? { width: 0, height: 2 } : undefined,
-    shadowOpacity: platformStyle === "material" ? 0.2 : undefined,
-    shadowRadius: platformStyle === "material" ? 1.2 : undefined,
+      platformStyle === "material" ? { width: 0, height: 0 } : undefined,
+    shadowOpacity: platformStyle === "material" ? 0 : undefined,
+    shadowRadius: platformStyle === "material" ? 0 : undefined,
     top: 0,
     left: 0,
     right: 0

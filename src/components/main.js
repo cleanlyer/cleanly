@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import { View, Text } from 'react-native'
-import { Container, Thumbnail, StyleProvider } from 'native-base'
+import { Container, Thumbnail } from 'native-base'
 import header from './common/header'
 import footer from './common/footer'
 import { connect } from 'react-redux'
-import getTheme from './native-base-theme/components'
-import material from './native-base-theme/variables/material'
 
 class Main extends Component {
     constructor(props){
@@ -15,7 +13,6 @@ class Main extends Component {
     render() {
         score = this.props.score
         return (
-            <StyleProvider style={getTheme(material)}>
             <Container> 
                 {header("Cleanly", this.props.score)}
                 <View style={{flex: 1, alignItems:'center'}}>
@@ -31,7 +28,6 @@ class Main extends Component {
                 </View>
                 {footer()}
             </Container>
-            </StyleProvider>
         )
     }
 }

@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { View, Text } from 'react-native'
-import { Container, Button, List, ListItem, Body, Right, Icon, Left, Thumbnail } from 'native-base'
+import { Button, List, ListItem, Body, Right, Icon, Left, Thumbnail } from 'native-base'
 import header from './common/header'
 import { connect } from 'react-redux'
+import { ContainerBackground } from './common/ContainerBackground'
 
 
 class Clean extends Component {
@@ -14,7 +15,7 @@ class Clean extends Component {
     render() {
         this.props.Inventory = []
         return (
-            <Container style={{ backgroundColor: 'white' }}> 
+            <ContainerBackground>
                 {header("Clean", this.props.score)}
                 <View style={{flex: 1}}>
                 <List>
@@ -26,15 +27,15 @@ class Clean extends Component {
                     </Left>
                         <Body><Text>latitude: {element.latitude}</Text>
                         <Text>longitude: {element.longitude}</Text></Body>
-                        <Right><Button transparent onPress={() => {
+                        <Right>
+                        <Icon name="trash" onPress={() => {
                             this.props.sendClean(element.id)
-                            this.props.updateScore(10)
-                        }}><Icon active name="trash" /></Button></Right>
+                            this.props.updateScore(10)}} /></Right>
                   </ListItem>)
                 }
                 </List>
                 </View>
-            </Container>
+            </ContainerBackground>
         )
     }
 }

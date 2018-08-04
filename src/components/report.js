@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
 import header from './common/header'
 import { Actions } from 'react-native-router-flux'
-import { Container, Footer, FooterTab, Button } from 'native-base'
+import { Footer, FooterTab, Button } from 'native-base'
 import { connect } from 'react-redux'
 import {v1 as uuid } from 'uuid'
 import { RNCamera } from 'react-native-camera'
+import { ContainerBackground } from './common/ContainerBackground'
 
 const styles = StyleSheet.create({
     container: {
@@ -37,7 +38,7 @@ class Report extends Component {
 
     render() {
         return (
-            <Container style={{ backgroundColor: 'white' }}> 
+            <ContainerBackground> 
                 {header("Report", this.props.score)}
                 <View style={styles.container}>
                     <RNCamera
@@ -82,7 +83,7 @@ class Report extends Component {
                      }}><Text> Submit And Clean </Text></Button>
                 </FooterTab>
             </Footer>
-            </Container>
+            </ContainerBackground>
         )
     }
 }

@@ -8,16 +8,14 @@ export default function header(name, score){
                 <Left>
                     {name!="Cleanly" && 
                     <Button transparent onPress={Actions.pop}>
-                        <Icon name='ios-arrow-back' />
+                        <Icon name='arrow-back' />
                     </Button>}
                 </Left>
                 <Body>
                     <Title>{name}</Title>
                 </Body>
                 <Right>
-                    <Button transparent>
-                        <Text>{score} kudos</Text>
-                    </Button>
+                    <Text>{score} kudos</Text>
                 </Right>
             </Header>
 }

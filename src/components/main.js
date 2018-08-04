@@ -4,6 +4,7 @@ import { Container, Thumbnail } from 'native-base'
 import header from './common/header'
 import footer from './common/footer'
 import { connect } from 'react-redux'
+import { ContainerBackground } from './common/ContainerBackground'
 
 class Main extends Component {
     constructor(props){
@@ -13,7 +14,7 @@ class Main extends Component {
     render() {
         score = this.props.score
         return (
-            <Container> 
+            <ContainerBackground> 
                 {header("Cleanly", this.props.score)}
                 <View style={{flex: 1, alignItems:'center'}}>
                     <Thumbnail large style={{ resizeMode: 'center', marginTop: 20, marginBottom: 20, backgroundColor: 'transparent' }} 
@@ -27,7 +28,8 @@ class Main extends Component {
                 <View style={{flex: 3}}>
                 </View>
                 {footer()}
-            </Container>
+            </ContainerBackground>
+                
         )
     }
 }

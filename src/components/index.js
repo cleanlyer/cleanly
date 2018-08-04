@@ -19,14 +19,12 @@ class AppContainer extends Component {
             return <StyleProvider style={getTheme(cleanly)}>
                     <Router {...this.props}>
                         <Scene key="root" hideNavBar={true} tabs={false} >
-                            <Scene key="tabbar" tabs={false} hideNavBar={true}>
-                                <Scene key='main' component={main} title="Cleanly" initial />
-                                <Scene key='report' component={report} title="Report" />
-                                <Scene key='clean' component={clean} title="Clean" />
-                            </Scene>
+                            <Scene key='main' component={main} title="Cleanly" initial />
+                            <Scene key='report' component={report} title="Report" />
+                            <Scene key='clean' component={clean} title="Clean" />
                         </Scene>
                     </Router>
-                </StyleProvider>
+                    </StyleProvider>
         }
     }
 

@@ -103,7 +103,7 @@ export default {
   checkboxTickColor: "#fff",
 
   // Color
-  brandPrimary:"rgba(0, 0, 0, 0)",
+  brandPrimary: "transparent",
   brandInfo: "#62B1F6",
   brandSuccess: "#5cb85c",
   brandDanger: "#d9534f",
@@ -116,7 +116,7 @@ export default {
 
   //Date Picker
   datePickerTextColor: "#000",
-  datePickerBg: "rgba(0, 0, 0, 0)",
+  datePickerBg: "transparent",
 
   // Font
   DefaultFontSize: 16,
@@ -134,7 +134,7 @@ export default {
 
   // Footer
   footerHeight: 55,
-  footerDefaultBg:"rgba(0, 0, 0, 0)",
+  footerDefaultBg: "transparent",
   footerPaddingBottom: 0,
 
   // FooterTab
@@ -143,18 +143,18 @@ export default {
   activeTab: "#fff",
   sTabBarActiveTextColor: "#007aff",
   tabBarActiveTextColor: "#fff",
-  tabActiveBgColor:"rgba(0, 0, 0, 0)",
+  tabActiveBgColor: "#3F51B5",
 
   // Header
-  toolbarBtnColor: "rgba(0, 0, 0, 0)",
-  toolbarDefaultBg:"rgba(0, 0, 0, 0)",
+  toolbarBtnColor: "#fff",
+  toolbarDefaultBg: "transparent",
   toolbarHeight: 56,
   toolbarSearchIconSize: 23,
   toolbarInputColor: "#fff",
   searchBarHeight: platform === "ios" ? 30 : 40,
   searchBarInputHeight: platform === "ios" ? 40 : 50,
   toolbarBtnTextColor: "#fff",
-  toolbarDefaultBorder:"rgba(0, 0, 0, 0)",
+  toolbarDefaultBorder: "transparent",
   iosStatusbar: "light-content",
   get statusBarColor() {
     return color(this.toolbarDefaultBg)
@@ -193,14 +193,14 @@ export default {
   lineHeight: 24,
 
   // List
-  listBg: "rgba(0, 0, 0, 0)",
+  listBg: "transparent",
   listBorderColor: "#c9c9c9",
   listDividerBg: "#f4f4f4",
   listBtnUnderlayColor: "#DDD",
   listItemPadding: 12,
   listNoteColor: "#808080",
   listNoteSize: 13,
-  listItemSelected:"rgba(0, 0, 0, 0)",
+  listItemSelected: "#3F51B5",
 
   // Progress Bar
   defaultProgressColor: "#E4202D",
@@ -208,26 +208,26 @@ export default {
 
   // Radio Button
   radioBtnSize: 23,
-  radioSelectedColorAndroid:"rgba(0, 0, 0, 0)",
+  radioSelectedColorAndroid: "#3F51B5",
   radioBtnLineHeight: 24,
   get radioColor() {
     return this.brandPrimary;
   },
 
   // Segment
-  segmentBackgroundColor:"rgba(0, 0, 0, 0)",
+  segmentBackgroundColor: "#3F51B5",
   segmentActiveBackgroundColor: "#fff",
   segmentTextColor: "#fff",
-  segmentActiveTextColor:"rgba(0, 0, 0, 0)",
+  segmentActiveTextColor: "#3F51B5",
   segmentBorderColor: "#fff",
-  segmentBorderColorMain:"rgba(0, 0, 0, 0)",
+  segmentBorderColorMain: "#3F51B5",
 
   // Spinner
   defaultSpinnerColor: "#45D56E",
   inverseSpinnerColor: "#1A191B",
 
   // Tab
-  tabDefaultBg:"rgba(0, 0, 0, 0)",
+  tabDefaultBg: "#3F51B5",
   topTabBarTextColor: "#b3c7f9",
   topTabBarActiveTextColor: "#fff",
   topTabBarBorderColor: "#fff",

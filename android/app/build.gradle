@@ -104,13 +104,12 @@ def getNpmVersion() {
     return packageJson["version"]
 }
 
-def getGitVersion() {
-    def process = "git rev-list master --first-parent --count".execute()
-    return process.text.toInteger()
+def getVersionCodeTimestamp() {
+    def currentDate = new Date()
+    def formattedDate = currentDate.format('yyMMddHHmm')
+    def code = formattedDate.toInteger()
+    return code
 }
-
-def userVer = getNpmVersion()
-def googleVer = getGitVersion()
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -120,8 +119,8 @@ android {
         applicationId "com.cleanly"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode googleVer
-        versionName userVer
+        versionCode getVersionCodeTimestamp()
+        versionName getNpmVersion()
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
@@ -165,6 +164,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-fbsdk')
     compile project(':react-native-camera')
     compile fileTree(dir: "libs", include: ["*.jar"])
     compile "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"

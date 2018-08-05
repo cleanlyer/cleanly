@@ -19,8 +19,8 @@ class Clean extends Component {
                     showsUserLocation = {true}
                     showsPointsOfInterest = {false}
                     zoomEnabled = {true}
-                    scrollEnabled = {false}
-                    showsMyLocationButton = {false}>
+                    scrollEnabled = {true}
+                    showsMyLocationButton = {true}>
                     {
                         this.props.listGarbage.map((element, index) => 
                         <Marker key={"element_"+index}

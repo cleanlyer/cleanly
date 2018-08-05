@@ -7,6 +7,7 @@ import { connect } from 'react-redux'
 import {v1 as uuid } from 'uuid'
 import { RNCamera } from 'react-native-camera'
 import { ContainerBackground } from './common/ContainerBackground'
+import { requestPermissions } from '../helpers/permissions'
 
 const styles = StyleSheet.create({
     container: {
@@ -44,10 +45,15 @@ class Report extends Component {
                     <RNCamera
                         style={styles.preview}
                         type={RNCamera.Constants.Type.back}
-                        permissionDialogTitle={'Permission to use camera'}
-                        permissionDialogMessage={'We need your permission to use your camera phone'}
                     >
                     {({ camera, status }) => {
+                        if(status === 'PENDING_AUTHORIZATION'){
+                            requestPermissions()
+                                .then(result => {
+                                    if(!result)
+                                        Actions.pop()
+                                })
+                        }
                         if (status === 'READY') 
                         return (
                         <View style={{ flex: 0, flexDirection: 'row', justifyContent: 'center' }}>

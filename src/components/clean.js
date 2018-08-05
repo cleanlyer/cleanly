@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { View, Text } from 'react-native'
-import { Button, List, ListItem, Body, Right, Icon, Left, Thumbnail } from 'native-base'
+import { List, ListItem, Body, Right, Icon, Left, Thumbnail } from 'native-base'
 import header from './common/header'
 import { connect } from 'react-redux'
 import { ContainerBackground } from './common/ContainerBackground'
-
+import MapView, { Marker } from 'react-native-maps'
 
 class Clean extends Component {
     constructor(props){
@@ -13,28 +13,25 @@ class Clean extends Component {
     }
 
     render() {
-        this.props.Inventory = []
         return (
             <ContainerBackground>
                 {header("Clean", this.props.score)}
-                <View style={{flex: 1}}>
-                <List>
-                {
-                    this.props.listGarbage.map((element, index) => 
-                    <ListItem key={"element_"+index} thumbnail>
-                    <Left>
-                        <Thumbnail square source={require('./resources/logo.png')} />
-                    </Left>
-                        <Body><Text>latitude: {element.latitude}</Text>
-                        <Text>longitude: {element.longitude}</Text></Body>
-                        <Right>
-                        <Icon name="trash" onPress={() => {
-                            this.props.sendClean(element.id)
-                            this.props.updateScore(10)}} /></Right>
-                  </ListItem>)
-                }
-                </List>
-                </View>
+                <MapView style={{flex: 1}}
+                    region={this.props.location}
+                    showsUserLocation = {true}
+                    showsPointsOfInterest = {false}
+                    zoomEnabled = {true}
+                    scrollEnabled = {false}
+                    showsMyLocationButton = {false}>
+                    {
+                        this.props.listGarbage.map((element, index) => 
+                        <Marker key={"element_"+index}
+                        coordinate={element}
+                        title="some garbage"
+                        description="some garbage tags"
+                        />
+                    )}
+                </MapView>
             </ContainerBackground>
         )
     }
@@ -43,8 +40,13 @@ class Clean extends Component {
 function mapStateToProps(state){
     let score = state.gamify.score
     let listGarbage = state.track.garbageCoordinates
+    let location = Object.assign({}, state.track.userCoordinates, {
+      latitudeDelta: 0.0922,
+      longitudeDelta: 0.0421,
+    })
+    console.log(location)
     return {
-        listGarbage, score
+        listGarbage, score, location
     }
 }
 

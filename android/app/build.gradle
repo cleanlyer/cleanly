@@ -124,6 +124,7 @@ android {
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
+        manifestPlaceholders = [API_KEY:keystoreProperties['API_KEY']]
     }
     signingConfigs {
         release {

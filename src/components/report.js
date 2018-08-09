@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, Text } from 'react-native'
 import header from './common/header'
 import { Actions } from 'react-native-router-flux'
 import { Footer, FooterTab, Button } from 'native-base'
@@ -7,7 +7,6 @@ import { connect } from 'react-redux'
 import {v1 as uuid } from 'uuid'
 import { RNCamera } from 'react-native-camera'
 import { ContainerBackground } from './common/ContainerBackground'
-import { requestPermissions } from '../helpers/permissions'
 
 const styles = StyleSheet.create({
     container: {
@@ -19,16 +18,7 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'flex-end',
       alignItems: 'center',
-    },
-    capture: {
-      flex: 0,
-      backgroundColor: '#fff',
-      borderRadius: 5,
-      padding: 15,
-      paddingHorizontal: 20,
-      alignSelf: 'center',
-      margin: 20,
-    },
+    }
   });
 
 class Report extends Component {
@@ -45,25 +35,7 @@ class Report extends Component {
                     <RNCamera
                         style={styles.preview}
                         type={RNCamera.Constants.Type.back}
-                    >
-                    {({ camera, status }) => {
-                        if(status === 'PENDING_AUTHORIZATION'){
-                            requestPermissions()
-                                .then(result => {
-                                    if(!result)
-                                        Actions.pop()
-                                })
-                        }
-                        if (status === 'READY') 
-                        return (
-                        <View style={{ flex: 0, flexDirection: 'row', justifyContent: 'center' }}>
-                            <TouchableOpacity onPress={() => this.takePicture(camera)} style={styles.capture}>
-                            <Text style={{ fontSize: 14 }}> SNAP </Text>
-                            </TouchableOpacity>
-                        </View>
-                        );
-                    }}
-                    </RNCamera>
+                    />
                 </View>
                 <Footer>
                 <FooterTab>

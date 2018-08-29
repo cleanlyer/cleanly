@@ -7,6 +7,7 @@ import { ActionCreators } from '../actions'
 import { Router, Scene } from 'react-native-router-flux'
 import { StyleProvider } from 'native-base'
 
+import login from './login'
 import main from './main'
 import report from './report'
 import clean from './clean'
@@ -19,6 +20,7 @@ class AppContainer extends Component {
             return <StyleProvider style={getTheme(cleanly)}>
                     <Router {...this.props}>
                         <Scene key="root" hideNavBar={true} tabs={false} >
+                            <Scene key='login' component={login} title="Login" />
                             <Scene key='main' component={main} title="Cleanly" initial />
                             <Scene key='report' component={report} title="Report" />
                             <Scene key='clean' component={clean} title="Clean" />

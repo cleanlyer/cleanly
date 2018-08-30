@@ -19,4 +19,8 @@ describe('index actions should have', () => {
     it('sendClean Action', () => {
     expect(ActionCreators.sendClean).toBeInstanceOf(Function)
     })
+
+    it('loginGoogle Action', () => {
+    expect(ActionCreators.loginGoogle).toBeInstanceOf(Function)
+    })
 })

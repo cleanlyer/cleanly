@@ -10,7 +10,6 @@ class Login extends Component {
     }
 
     render() {
-        score = this.props.score
         return (
             <ContainerBackground> 
                 <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
@@ -18,7 +17,7 @@ class Login extends Component {
                         style={{ width: 212, height: 48 }}
                         size={GoogleSigninButton.Size.Standard}
                         color={GoogleSigninButton.Color.Auto}
-                        onPress={this._signIn}
+                        onPress={() => {this.props.loginGoogle()}}
                     />
                 </View>
             </ContainerBackground>

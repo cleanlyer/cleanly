@@ -31,4 +31,8 @@ describe('types should have', () => {
     it('SEND_CLEAN_OFFLINE as SEND_CLEAN_OFFLINE', () => {
         expect(types.SEND_CLEAN_OFFLINE).toEqual('SEND_CLEAN_OFFLINE')
     })
+
+    it('LOGIN as LOGIN', () => {
+        expect(types.LOGIN).toEqual('LOGIN')
+    })
 })
